@@ -1,0 +1,112 @@
+[bar/barre-i3-gauche]
+monitor = DisplayPort-1
+width = 100%
+height = 35px
+padding-left = 1px
+padding-right = 1px
+background = #90000000
+font-0 = System San Francisco Display:size=14;2px
+font-1 = Font Awesome 5 Free Regular:size=14;2px
+font-2 = Font Awesome 5 Brands Regular:size=14;2px
+font-3 = Font Awesome 5 Free Solid:size=14;2px
+line-size = 3
+override-redirect = false
+module-margin = 1
+modules-left = i3
+modules-center = title
+modules-right = date
+
+[bar/barre-i3-centre]
+monitor = DisplayPort-0
+width = 100%
+height = 35px
+padding-left = 1px
+padding-right = 1px
+background = #90000000
+font-0 = system san francisco display:size=14;2px
+font-1 = font awesome 5 free regular:size=14;2px
+font-2 = font awesome 5 brands regular:size=14;2px
+font-3 = Font Awesome 5 Free Solid:size=14;2px
+line-size = 3
+override-redirect = false
+module-margin = 1
+modules-left = i3
+modules-center = title
+modules-right = temperature cpu memory pulseaudio date
+
+[bar/barre-i3-droite]
+monitor = HDMI-A-0
+width = 100%
+height = 35px
+padding-left = 1px
+padding-right = 1px
+background = #90000000
+font-0 = system san francisco display:size=14;2px
+font-1 = font awesome 5 free regular:size=14;2px
+font-2 = font awesome 5 brands regular:size=14;2px
+font-3 = Font Awesome 5 Free Solid:size=14;2px
+line-size = 1
+override-redirect = false
+module-margin = 1
+modules-left = i3
+modules-center = title
+tray-position = right
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+strip-wsnumbers = false
+index-sort = true
+enable-click = true
+enable-scroll = true
+wrapping-scroll = true
+reverse-scroll = true
+label-unfocused-background = #61538D
+label-unfocused-padding = 5
+label-focused-background = #54487A
+label-focused-padding = 5
+label-focused-underline = #E1E1E1
+label-urgent-background = #D9534F
+label-urgent-padding = 5
+label-visible-background = #61538D
+label-visible-padding = 5
+label-separator = " " 
+label-separator-padding = 0
+
+[module/title]
+type = internal/xwindow
+
+[module/date]
+type = internal/date
+format =   <label> 
+date = %Y-%m-%d  %H:%M
+
+[module/pulseaudio]
+type = internal/pulseaudio
+interval = 5
+format-volume = <ramp-volume> <label-volume>
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+label-muted = 
+
+[module/memory]
+type = internal/memory
+interval = 2
+format = <label>
+label =   %percentage_used%%
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+label =   %percentage%%
+
+[module/temperature]
+type = internal/temperature
+interval = 2
+thermal-zone = 0
+hwmon-path = /sys/class/hwmon/hwmon2/temp1_input
+base-temperature = 20
+warn-temperature = 80
+label =  %temperature-c%
+label-warn =  %temperature-c%
