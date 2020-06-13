@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="menu-accessoires" label="Accessoires">
+  <item label="Calculator">
+    <action name="Execute">
+      <command>galculator</command>
+    </action>
+  </item>
+  <item label="Kitty">
+    <action name="Execute">
+      <command>kitty</command>
+    </action>
+  </item>
+  <item label="GEdit">
+    <action name="Execute">
+      <command>gedit</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="menu-internet" label="Internet">
+  <item label="Firefox">
+    <action name="Execute">
+      <command>firefox</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Firefox</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="menu-bureautique" label="Office">
+  <item label="Libreoffice Calc">
+    <action name="Execute">
+      <command>localc</command>
+    </action>
+  </item>
+  <item label="Libreoffice Impress">
+    <action name="Execute">
+      <command>loimpress</command>
+    </action>
+  </item>
+   <item label="Libreoffice Writer">
+    <action name="Execute">
+      <command>lowriter</command>
+    </action>
+  </item>
+  <item label="Gimp">
+    <action name="Execute">
+      <command>gimp</command>
+    </action>
+  </item>
+  <item label="Inkscape">
+    <action name="Execute">
+      <command>inkscape</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="menu-multimedia" label="Multimedia">
+   <item label="Spotify">
+    <action name="Execute">
+      <command>spotify</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+ </menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <menu id="menu-accessoires"/>
+  <menu id="menu-internet"/>
+  <menu id="menu-bureautique"/>
+  <menu id="menu-multimedia"/>
+  <separator label="Système" />
+  <item label="Configurer Openbox">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Recharger la configuration">
+    <action name="Reconfigure" />
+  </item>
+
+  <item label="Déconnexion">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+</menu>
+
+</openbox_menu>
