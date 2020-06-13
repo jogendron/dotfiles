@@ -52,6 +52,24 @@ modules-left = i3
 modules-center = title
 tray-position = right
 
+[bar/barre-openbox-centre]
+monitor = DisplayPort-0
+width = 100%
+height = 35px
+padding-left = 1px
+padding-right = 1px
+background = #90000000
+font-0 = system san francisco display:size=14;2px
+font-1 = font awesome 5 free regular:size=14;2px
+font-2 = font awesome 5 brands regular:size=14;2px
+font-3 = Font Awesome 5 Free Solid:size=14;2px
+line-size = 3
+override-redirect = false
+module-margin = 1
+modules-left = xworkspace
+modules-center = 
+modules-right = temperature cpu memory pulseaudio date
+
 [module/i3]
 type = internal/i3
 pin-workspaces = true
@@ -72,6 +90,26 @@ label-visible-background = #61538D
 label-visible-padding = 5
 label-separator = " " 
 label-separator-padding = 0
+
+[module/xworkspace]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = false
+format = <label-state>
+icon-0 = 1;
+icon-1 = 2;
+icon-2 = 3;
+icon-3 = 4;
+label-monitor = %icon%   %name%
+label-monitor-padding = 3
+label-active = %icon%   %name%
+label-active-padding = 3
+label-active-underline = #61538D
+label-occupied = %icon%   %name%
+label-occupied-padding = 3
+label-empty = %icon%   %name%
+label-empty-padding = 3
 
 [module/title]
 type = internal/xwindow
