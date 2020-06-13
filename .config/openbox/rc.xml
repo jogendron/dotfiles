@@ -310,7 +310,7 @@
     <!-- Keybindings for running applications -->
     <keybind key="W-e">
       <action name="Execute">
-        <command>ranger</command>
+        <command>kitty ranger</command>
       </action>
     </keybind>
   </keyboard>
