@@ -34,6 +34,25 @@ modules-left = i3
 modules-center = title
 modules-right = temperature cpu memory pulseaudio date
 
+[bar/barre-i3-laptop]
+monitor = LVDS-1
+width = 100%
+height = 35px
+padding-left = 1px
+padding-right = 1px
+background = #90000000
+font-0 = system san francisco display:size=14;2px
+font-1 = font awesome 5 free regular:size=14;2px
+font-2 = font awesome 5 brands regular:size=14;2px
+font-3 = Font Awesome 5 Free Solid:size=14;2px
+line-size = 3
+override-redirect = false
+module-margin = 1
+modules-left = i3
+modules-center = title
+modules-right = temperature cpu memory pulseaudio date
+
+
 [bar/barre-i3-droite]
 monitor = HDMI-A-0
 width = 100%
