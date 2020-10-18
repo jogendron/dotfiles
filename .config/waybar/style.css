@@ -30,10 +30,10 @@ window#waybar.hidden {
     box-shadow: inherit;
     border-bottom: 3px solid #E1E1E1;
 }
-
+/* #54487D 2779a8; */
 #workspaces button.focused {
     opacity: 1;
-    background-color: #54487D;
+    background-color: #54487D; 
     box-shadow: inherit;
     border-bottom: 3px solid #E1E1E1;
 }

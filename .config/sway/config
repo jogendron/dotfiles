@@ -22,7 +22,8 @@ set $term kitty
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
-set $menu rofi -show drun -monitor XWAYLAND0
+#set $menu rofi -show drun -monitor XWAYLAND0
+set $menu wofi --show drun -f -i -p" " -L 15 -I -m -b -a
 
 ### Output configuration
 #
@@ -31,7 +32,7 @@ output * bg /home/jonathan/Images/Fond-ecran/ble.png fill
 
 output DP-2 pos 0 0 res 2560x1440@143.996994hz
 output DP-1 pos 2560 0 res 2560x1440@143.996994hz
-output HDMI-A-1 pos 5120 360 res 1920x1080@60hz
+#output HDMI-A-1 pos 5120 360 res 1920x1080@60hz
 
 #
 # Example configuration:
@@ -160,7 +161,7 @@ input type:keyboard {
     workspace 7 output DP-1
     workspace 8 output DP-1
     workspace 9 output DP-2
-    workspace 10 output HDMI-A-1
+    workspace 10 output DP-2
 
     gaps inner 10
     gaps outer 10
@@ -228,16 +229,21 @@ bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 default_border none
+default_floating_border normal
+client.focused 070707 070707 ffffff 070707 070707
+client.unfocused 070707 070707 ffffff 070707 070707
+
+font SF Pro Display Regular 13
 
 exec pulseaudio --start & 
 
 exec_always {
 	gsettings set org.gnome.desktop.interface gtk-theme 'Material-Black-Plum'
 	gsettings set org.gnome.desktop.interface icon-theme 'Material-Black-Plum-Suru'
-	gsettings set org.gnome.desktop.interface cursor-theme 'Adwaita'
-	gsettings set org.gnome.desktop.interface font-name 'System San Francisco Display 12'
+	gsettings set org.gnome.desktop.interface font-name 'SF Pro Display Regular 12'
 	gsettings set org.gnome.desktop.interface cursor-theme "volantes_cursors"
 }
 
