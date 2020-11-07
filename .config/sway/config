@@ -23,7 +23,7 @@ set $term kitty
 # on the original workspace that the command was run on.
 #set $menu dmenu_path | dmenu | xargs swaymsg exec --
 #set $menu rofi -show drun -monitor XWAYLAND0
-set $menu wofi --show drun -f -i -p" " -L 15 -I -m -b -a
+set $menu wofi --show drun -f -i -p" " -L 12 -w 4 -I -m -b -a -s ~/.config/wofi/styles.css
 
 ### Output configuration
 #
