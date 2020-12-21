@@ -29,6 +29,8 @@ set $menu wofi --show drun -f -i -p" " -L 12 -w 4 -I -m -b -a -s ~/.config/wofi/
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 output * bg /home/jonathan/Images/Fond-ecran/ble.png fill
+#output * bg /home/jonathan/Images/Fond-ecran/archlinux-2.png fill
+
 
 output DP-2 pos 0 0 res 2560x1440@143.996994hz
 output DP-1 pos 2560 0 res 2560x1440@143.996994hz
@@ -235,6 +237,9 @@ default_border none
 default_floating_border normal
 client.focused 070707 070707 ffffff 070707 070707
 client.unfocused 070707 070707 ffffff 070707 070707
+
+for_window [app_id=zenity] floating enable
+for_window [title="Fin de session"] move position 2240 -17
 
 font SF Pro Display Regular 13
 

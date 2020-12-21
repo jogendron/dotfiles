@@ -3,7 +3,7 @@
     "height": 35, // Waybar height (to be removed for auto height)
     "modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["temperature", "cpu", "memory", "pulseaudio", "tray", "clock"],
+    "modules-right": ["temperature", "cpu", "memory", "pulseaudio", "tray", "clock", "custom/exitmenu"],
 
     // Modules configuration
     // "sway/workspaces": {
@@ -99,5 +99,10 @@
         "escape": true,
         "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+    },
+	"custom/exitmenu": {
+		"format": "   ",
+		"on-click": "~/.config/waybar/modules/exit-menu.sh",
+		"tooltip": false
+	}
 }

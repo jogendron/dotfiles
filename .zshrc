@@ -106,6 +106,11 @@ fi
 source $ZSH/oh-my-zsh.sh
 
 alias config='/usr/bin/git --git-dir=/home/jonathan/.myconfig --work-tree=/home/jonathan'
+alias monter-saruman='/home/jonathan/Bin/monter-saruman.sh'
+alias demonter-saruman='/home/jonathan/Bin/demonter-saruman.sh'
+
+PATH=$PATH:$HOME/Bin
+export PATH
 
 export RANGER_LOAD_DEFAULT_RC=false
 
