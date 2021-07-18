@@ -5,10 +5,10 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Variables
-set $mod Mod4
+set $mod Mod1
 
 # Your preferred terminal emulator
-set $term kitty
+set $term alacritty
 
 # Your preferred application launcher
 set $menu wofi --show drun -f -i -p" " -L 12 -w 4 -I -m -b -a -s ~/.config/wofi/styles.css
@@ -19,11 +19,12 @@ output * bg /home/jonathan/Images/Fond-ecran/ble.png fill
 output DP-2 pos 0 0 res 2560x1440@143.996994hz
 output DP-1 pos 2560 0 res 2560x1440@143.996994hz
 
+### XWayland configuration
+xwayland enable
+
 ### Idle configuration
-exec swayidle -w \
-	timeout 900 'swaylock -i ~/Images/Fond-ecran/ble-verrouille.png' \
-	timeout 1800 'swaymsg "output * dpms off"' \
-	resume 'swaymsg "output * dpms on"'
+#exec swayidle -w \
+#	timeout 960 'swaylock -i ~/Images/Fond-ecran/ble-verrouille.png' 
 
 ### Input configuration
 #
@@ -160,10 +161,13 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+bindsym XF86AudioPlay exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause
+bindsym XF86AudioPrev exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous
+bindsym XF86AudioNext exec dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next
 bindsym Print exec grim -g "$(slurp)" - | wl-copy
 
 bindsym $mod+l exec swaylock -i ~/Images/Fond-ecran/ble-verrouille.png
@@ -174,20 +178,22 @@ client.focused 070707 070707 ffffff 070707 070707
 client.unfocused 070707 070707 ffffff 070707 070707
 
 for_window [app_id=zenity] floating enable
-for_window [title="Fin de session"] move position 2235 -15
+for_window [title="Fin de session"] move position 2205 -15
+for_window [title="Skype"] floating enable
 
 font SF Pro Display Regular 13
 
+exec gnome-keyring-daemon --start &
+
 exec_always {
-	gsettings set org.gnome.desktop.interface gtk-theme 'Material-Black-Plum'
+	gsettings set org.gnome.desktop.interface gtk-theme 'Material-Black-Plum-3.36'
 	gsettings set org.gnome.desktop.interface icon-theme 'Material-Black-Plum-Suru'
-	gsettings set org.gnome.desktop.interface font-name 'SF Pro Display Regular 12'
+	gsettings set org.gnome.desktop.interface font-name 'Roboto Regular 12'
 	gsettings set org.gnome.desktop.interface cursor-theme "volantes_cursors"
 }
 
 seat seat0 xcursor_theme "volantes_cursors"
 
-exec pulseaudio --start &
 exec (waybar &) &
 
 include /etc/sway/config.d/*

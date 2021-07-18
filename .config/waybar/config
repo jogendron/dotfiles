@@ -68,7 +68,7 @@
         "format": "{icon} {temperatureC}°C",
         "format-icons": ["", "", ""]
     },
-        "network": {
+    "network": {
         // "interface": "enp4s0", // (Optional) To force the use of this interface
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ifname}: {ipaddr}/{cidr} ",

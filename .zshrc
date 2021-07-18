@@ -105,13 +105,21 @@ fi
 
 source $ZSH/oh-my-zsh.sh
 
+PATH=$PATH:$HOME/Bin
+
 alias config='/usr/bin/git --git-dir=/home/jonathan/.myconfig --work-tree=/home/jonathan'
 alias monter-saruman='/home/jonathan/Bin/monter-saruman.sh'
 alias demonter-saruman='/home/jonathan/Bin/demonter-saruman.sh'
+alias avi2mkv='/home/jonathan/Bin/avi2mkv.sh'
+alias guitar-pro=guitar-pro.sh
 
-PATH=$PATH:$HOME/Bin
 export PATH
 
 export RANGER_LOAD_DEFAULT_RC=false
+export QT_QPA_PLATFORM=wayland
+export QT_QPA_PLATFORMTHEME=qt5ct
+export MOZ_ENABLE_WAYLAND=1
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=sway
 
 clear && echo && neofetch --color_blocks off --ascii_colors 4 12 --colors 12 4 4 4 4 7 && echo
